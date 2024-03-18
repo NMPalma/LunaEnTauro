@@ -1,8 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Tangerine&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cookie&display=swap');
 
-@property --fuente-principal {}
-
+/* Variables de color */
 :root {
   --color-primary: #d2a4e0;
   --color-button: #b36dc8;
@@ -13,15 +12,29 @@
   --color-dark: #34495e;
 }
 
-.fuente {
-  font-family: 'Tangerine', cursive;
+/* Estilos generales */
+* {
+  font-family: 'Cookie', cursive;
+  color: rgb(243, 217, 217);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logo {
+  width: 30%;
+  height: 30%;
+  margin-top: 3vw;
 }
 
 h1 {
   text-align: center;
   text-decoration: none;
-  margin-top: 50px;
-  font-size: 5rem;
+  margin-top: 5vh;
+  font-size: 7vw;
 }
 
 header {
@@ -45,9 +58,7 @@ nav {
 }
 
 a {
-  color: rgb(243, 217, 217);
   text-decoration: none;
-  font-family: 'Cookie', cursive;
   font-size: 2rem;
   height: 100%;
   text-align: center;
@@ -65,4 +76,73 @@ a:hover {
 a.active {
   background-color: var(--color-primary);
   color: rgb(243, 217, 217);
+}
+
+/* Estilos para la barra lateral */
+.productos-container {
+  display: flex;
+  margin-left: -10px;
+  margin-top: 10px;
+  align-items: center;
+}
+
+.sidebar {
+  width: 30%;
+  height: 100vh;
+  background-color: var(--color-button);
+  box-sizing: border-box;
+  margin-left: 0;
+}
+
+.sidebar h2 {
+  margin: 0;
+  padding: 10%;
+  font-weight: 500;
+  font-size: xx-large;
+  cursor: pointer;
+  /* Agregamos cursor: pointer para indicar que es clickeable */
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  opacity: 0;
+  /* Inicialmente ocultamos la lista */
+  height: 0;
+  /* También ajustamos la altura a 0 para que no ocupe espacio */
+  overflow: hidden;
+  /* Ocultamos cualquier contenido que se desborde de la lista */
+  transition: opacity 0.3s ease, height 0.3s ease;
+  /* Agregamos transiciones suaves */
+}
+
+.sidebar ul.mostrar {
+  opacity: 1;
+  /* Mostramos la lista al añadir la clase 'mostrar' */
+  height: auto;
+  /* Restauramos la altura automáticamente para mostrar el contenido */
+}
+
+.sidebar ul li {
+  font-size: larger;
+  cursor: pointer;
+  padding: 10%;
+  width: 100%;
+  margin-left: -13px;
+}
+
+/* Efecto hover para los títulos y elementos de la barra lateral */
+.sidebar h2:hover,
+.sidebar h2.activo {
+  background-color: var(--color-hover);
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.sidebar ul li:hover,
+.sidebar ul li.activo {
+  background-color: var(--color-hover);
+  cursor: pointer;
+  text-decoration: underline;
 }
