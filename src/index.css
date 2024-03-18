@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Tangerine&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cookie&display=swap');
+
+@property --fuente-principal {}
+
+:root {
+  --color-primary: #d2a4e0;
+  --color-button: #b36dc8;
+  --color-hover: #984eab;
+  --color-active: #7e3e8d;
+  --color-info: #3498db;
+  --color-light: #f5f5f5;
+  --color-dark: #34495e;
+}
+
+.fuente {
+  font-family: 'Tangerine', cursive;
+}
+
+h1 {
+  text-align: center;
+  text-decoration: none;
+  margin-top: 50px;
+  font-size: 5rem;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+body {
+  background-color: var(--color-primary);
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--color-button);
+  margin: -10px;
+}
+
+a {
+  color: rgb(243, 217, 217);
+  text-decoration: none;
+  font-family: 'Cookie', cursive;
+  font-size: 2rem;
+  height: 100%;
+  text-align: center;
+  width: 33%;
+  line-height: 3rem;
+}
+
+a:hover {
+  background-color: var(--color-hover);
+  cursor: pointer;
+  border-color: 1px solid black;
+  text-decoration: underline;
+}
+
+a.active {
+  background-color: var(--color-primary);
+  color: rgb(243, 217, 217);
+}
