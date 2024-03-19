@@ -1,14 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Tangerine&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Delius+Swash+Caps&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cookie&display=swap');
 
 /* Variables de color */
 :root {
   --color-primary: #d2a4e0;
+  --color-secundary: #e8c3f3;
   --color-button: #b36dc8;
   --color-hover: #984eab;
   --color-active: #7e3e8d;
-  --color-info: #3498db;
-  --color-light: #f5f5f5;
+  --color-info: rgb(173, 26, 154);
+  --color-form: #cc87e0;
   --color-dark: #34495e;
 }
 
@@ -16,6 +17,15 @@
 * {
   font-family: 'Cookie', cursive;
   color: rgb(243, 217, 217);
+  font-size: 1rem;
+}
+
+/* Media query para ajustar el tamaño de fuente base en pantallas más pequeñas */
+@media screen and (max-width: 768px) {
+  * {
+    font-size: 0.8rem;
+    /* Reducir el tamaño de la fuente base para pantallas más pequeñas */
+  }
 }
 
 .container {
@@ -31,10 +41,12 @@
 }
 
 h1 {
+  font-family: 'Tangerine', cursive;
+  color: rgb(173, 26, 154);
   text-align: center;
   text-decoration: none;
   margin-top: 5vh;
-  font-size: 7vw;
+  font-size: 5vw;
 }
 
 header {
@@ -87,18 +99,26 @@ a.active {
 }
 
 .sidebar {
-  width: 30%;
+  width: 20%;
   height: 100vh;
   background-color: var(--color-button);
   box-sizing: border-box;
   margin-left: 0;
 }
 
+/* Media query para ajustar el tamaño de la barra lateral en pantallas más grandes */
+@media screen and (max-width: 768px) {
+  .sidebar {
+    width: 20%;
+
+  }
+}
+
 .sidebar h2 {
   margin: 0;
   padding: 10%;
   font-weight: 500;
-  font-size: xx-large;
+  font-size: 2rem;
   cursor: pointer;
   /* Agregamos cursor: pointer para indicar que es clickeable */
 }
@@ -108,28 +128,24 @@ a.active {
   padding: 0;
   margin: 0;
   opacity: 0;
-  /* Inicialmente ocultamos la lista */
   height: 0;
-  /* También ajustamos la altura a 0 para que no ocupe espacio */
   overflow: hidden;
-  /* Ocultamos cualquier contenido que se desborde de la lista */
   transition: opacity 0.3s ease, height 0.3s ease;
-  /* Agregamos transiciones suaves */
 }
 
 .sidebar ul.mostrar {
   opacity: 1;
   /* Mostramos la lista al añadir la clase 'mostrar' */
   height: auto;
+  margin-left: 15px;
   /* Restauramos la altura automáticamente para mostrar el contenido */
 }
 
 .sidebar ul li {
-  font-size: larger;
+  font-size: 1rem;
   cursor: pointer;
   padding: 10%;
   width: 100%;
-  margin-left: -13px;
 }
 
 /* Efecto hover para los títulos y elementos de la barra lateral */
@@ -145,4 +161,110 @@ a.active {
   background-color: var(--color-hover);
   cursor: pointer;
   text-decoration: underline;
+}
+
+/* Estilos para el formulario */
+.addProductContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.addForm {
+  border: 1px solid rgb(74, 70, 75);
+  border-radius: 5vw;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 75%;
+  text-align: center;
+  background-color: var(--color-form);
+  margin-top: 25vw;
+}
+
+.labelForm {
+  font-size: 2rem;
+  padding: 15px;
+  color: var(--color-info);
+  width: auto;
+}
+
+.inputForm {
+  color: var(--color-info);
+  background-color: var(--color-secundary);
+  font-size: 2rem;
+  border: 1px solid black;
+  border-radius: 3px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 5px;
+}
+
+.inputForm[type="file"] {
+  color: var(--color-info);
+  background-color: var(--color-secundary);
+  padding: 5px;
+  border: 1px solid black;
+  border-radius: 3px;
+  width: 25vw;
+  height: 20vw;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+}
+
+.inputForm[type="file"] {
+  overflow: hidden;
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  position: absolute;
+  z-index: -1;
+}
+
+/* Estilos para el botón de selección de archivo personalizado */
+.inputForm[type="file"]+label {
+  background-color: var(--color-button);
+  color: var(--color-light);
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 2rem;
+  width: 35%;
+  border: 1px solid rgb(74, 70, 75);
+  border-radius: 10px;
+}
+
+.inputForm[type="file"]+label:hover {
+  background-color: var(--color-hover);
+}
+
+.formGroup {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+button {
+  background-color: var(--color-button);
+  color: var(--color-light);
+  font-size: 2rem;
+  border: 1px solid rgb(74, 70, 75);
+  border-radius: 10px;
+  width: 35%;
+}
+
+button:hover {
+  background-color: var(--color-hover);
+  cursor: pointer;
+}
+
+option {
+  color: var(--color-info);
+  background-color: var(--color-secundary);
+  font-size: 1.5rem;
+  font-family: "Delius Swash Caps", cursive;
 }

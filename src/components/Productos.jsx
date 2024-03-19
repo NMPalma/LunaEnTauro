@@ -1,10 +1,13 @@
-import Header from "./components/Header";
+import Header from "./Header";
 import { useState } from "react";
+import productosData from '/src/productos.json';
+
 
 export function Productos() {
     const [mostrarMarcas, setMostrarMarcas] = useState(false);
     const [mostrarProductos, setMostrarProductos] = useState(false);
     const [tituloActivo, setTituloActivo] = useState(null);
+    const productos = productosData
 
     const toggleMarcas = () => {
         setMostrarMarcas(!mostrarMarcas);

@@ -1,0 +1,10 @@
+{
+    "id": 1,
+    "precio": 10.99,
+    "nombre": "Tibetano",
+    "marca": "Aromanza",
+    "descripcion": "Esta es la descripcion del tibetano de aromanza",
+    "imagen": "imagen1.jpg",
+    "categoria": "Sahumerio",
+    "aromas": "Frutos Rojos"
+}
